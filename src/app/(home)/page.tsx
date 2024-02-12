@@ -40,22 +40,27 @@ const HomePage = () => {
     <div className="flex flex-col gap-5 w-full">
       <PageTitle title="Dashboard" />
       <section className="grid w-full grid-cols-1 gap-4 gap-x-8 transition-all sm:grid-cols-2 xl:grid-cols-4">
-        {
-          cardData.map((item, i) => <Card 
-          key={i} 
-          label={item.label}
-          amount={item.amount}
-          description={item.description}
-          icon={item.icon}
-          />)
-        }
+        {cardData.map((item, i) => (
+          <Card
+            key={i}
+            label={item.label}
+            amount={item.amount}
+            description={item.description}
+            icon={item.icon}
+          />
+        ))}
       </section>
       <section className="grid grid-cols-1 gap-4 transition-all lg:grid-cols-2">
-          <CardContent> 
-            <p className="p-4 font-semibold">Overview</p>
-            <BarChart />
-          </CardContent>
-          <CardContent></CardContent>
+        <CardContent>
+          <p className="p-4 font-semibold">Overview</p>
+          <BarChart />
+        </CardContent>
+        <CardContent>
+          <section>
+            <p>Recent Sales</p>
+            <p className="text-sm text-gray-400">You made 256 sales this month</p>
+          </section>
+        </CardContent>
       </section>
     </div>
   );
