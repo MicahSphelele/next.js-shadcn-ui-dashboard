@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   ChevronRight,
@@ -23,6 +23,16 @@ export const SideNavbar = ({}: Props) => {
   const onlyWidth = useWindowWidth();
   const isMobileWdith = onlyWidth < 768;
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(()=> {
+    setIsMounted(true);
+  }, []);
+
+  if(!isMounted) {
+    return null;
+  }
+
   return (
     <TooltipProvider>
       <div className="relative min-w-[80px] border-r px-3 pb-3 pt-24">
@@ -35,6 +45,7 @@ export const SideNavbar = ({}: Props) => {
             >
               <ChevronRight />
             </Button>
+         
           </div>
         )}
 

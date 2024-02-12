@@ -2,6 +2,7 @@ import { PageTitle } from "@/components/page-title";
 import { Card, CardContent, CardProps } from "@/components/card";
 import type { Metadata } from "next";
 import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
+import { BarChart } from "@/components/bar-chart";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -52,8 +53,9 @@ const HomePage = () => {
       <section className="grid grid-cols-1 gap-4 transition-all lg:grid-cols-2">
           <CardContent> 
             <p className="p-4 font-semibold">Overview</p>
+            <BarChart />
           </CardContent>
-          <CardContent> Card Content</CardContent>
+          <CardContent></CardContent>
       </section>
     </div>
   );
