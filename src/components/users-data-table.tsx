@@ -1,7 +1,6 @@
 "use client";
 
 import { DataTable } from "@/components/data-table";
-import { PageTitle } from "@/components/page-title";
 import { ColumnDef } from "@tanstack/react-table"
 import Image from "next/image";
 
@@ -20,7 +19,11 @@ type Payment = {
       cell: ({ row }) => {
         return (
         <div className="flex gap-2 items-center">
-            <Image className="w-10 h-10" src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${row.getValue("name")}`} alt="avater" width={10} height={10}/>
+            <Image className="w-10 h-10" 
+            src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${row.getValue("name")}`} 
+            alt="avater" width={10} 
+            height={10}/>
+            <p>{row.getValue("name")} </p>
         </div>
         )
       }
