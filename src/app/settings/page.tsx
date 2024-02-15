@@ -1,3 +1,6 @@
+
+import { PageTitle } from "@/components/page-title";
+import { SettingsView } from "@/components/settings-view";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,7 +11,10 @@ type Props = {};
 
 const  SettingsPage = ({}: Props) =>{
     return (
-      <div>This is the settings page</div>
+      <div className="flex flex-col gap-5 w-full">
+      <PageTitle title="Settings" />
+      <SettingsView />
+    </div>
     );
   };
   
